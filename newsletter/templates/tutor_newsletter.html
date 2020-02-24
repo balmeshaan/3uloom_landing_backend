@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+3uloom Tutors
+{% endblock title %}
+
+{% block content %}
+	<form action="{% url 'tutor-subscribe' %}" method="POST">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<input type="submit" name="Sign Me Up!">
+	</form>
+{% endblock content %}
